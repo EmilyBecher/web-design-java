@@ -37,7 +37,7 @@ public class Mastermind {
 	            index=generator.nextInt(c.length);
 	            code+=c[index];
 	        }
-	        //System.out.println(code);
+	        System.out.println(code);
 	        
 	        System.out.println("The code is set. Good luck.");
 	        
@@ -100,16 +100,21 @@ public class Mastermind {
 	        	int j = 0;
 	        }
 	        //Outputs
-	        System.out.println(guess + " Correct Numbers in Places: "+ red);
-	        System.out.println("Correct Numbers in the wrong Places: " + white);
+	        System.out.println(guess + " Correct numbers in the right places: "+ red);
+	        System.out.println("Correct numbers in the wrong places: " + white);
 	        turns++;
 	        }
 	        System.out.println("You Win! The code was " + code);
-	        System.out.println("It took you " + turns + " guesses.");
+	        if (turns == 1) {
+	        	System.out.println("It took you 1 guess.");
+	        }
+	        else {
+	        	System.out.println("It took you " + turns + " guesses.");
+	        }
 	        System.out.println("Would you like to play again? (y/n)");
 	        Scanner yesno = new Scanner(System.in);
 	        String want = yesno.nextLine();
-	        if (want.equals("y")) {
+	        if (want.equals("y") || want.equals("yes") || want.equals("Yes") || want.equals("YES") || want.equals("Y")) {
 	        	playing = true;
 	        }
 	        else {

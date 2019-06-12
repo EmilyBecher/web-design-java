@@ -59,7 +59,7 @@ public class Mastermind {
 		        guess = scan.nextLine();
 		        guessChars = guess.toCharArray();
 		        if (guessChars.length != numberOfPegs) {//checks if guess is the correct length
-		        	System.out.println("Your guess needs to be the same length as the code. The code is " + numberOfPegs + " digits.");
+		        	System.out.println("Your guess needs to be the same length as the code. The code is " + numberOfPegs + " digits. (ex. 1234 for a four digit code)");
 		        }
 		        else {
 			        for (int i = 0; i < guessChars.length; i++) {//checks if the guess is only valid characters
@@ -90,7 +90,7 @@ public class Mastermind {
 	        }
 	        //Correct number and wrong placement
 	        for (int i = 0; i < numberOfPegs; i++) {
-			int j = 0;//resets j to 0 in order to run through all the possiblilities again
+			int j = 0;//resets j to 0 in order to run through all the possibilities again
 	        	for (int j = 0; j < numberOfPegs; j++) {
 	        		if (tempChars[i] == tempGuess[j]) {
 	        			tempChars[i] = match[0];//avoids double counting
@@ -105,7 +105,7 @@ public class Mastermind {
 	        turns++;//counts turns (only valid turns)
 	        }
 	        System.out.println("You Win! The code was " + code);
-	        if (turns == 1) {//Makes sure the grammar of the output is good
+	        if (turns == 1) {//Makes sure the grammar of the output is correct
 	        	System.out.println("It took you 1 guess.");
 	        }
 	        else {
